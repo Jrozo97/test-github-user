@@ -1,9 +1,18 @@
-import GitHubUser from './Components/GitHubUser';
-
+import { useContext } from "react";
+import GitHubUser from "./Components/GitHubUser";
+import { DarkModeContext } from "./context/darkModeContext";
+import CustomSwitch from "./Components/Common/CustomSwitch";
 
 function App() {
+  const { theme, handleChangeTheme } = useContext(DarkModeContext);
+
   return (
-    <main className='w-full h-full flex flex-col items-center pt-20'>
+    <main className="w-screen h-screen flex flex-col items-center pt-14 transition-colors duration-300 dark:bg-primary">
+      <CustomSwitch
+        checked={theme === "dark"}
+        onChange={handleChangeTheme}
+        // label={`${theme === "dark" ? "Modo oscuro" : "Modo claro"}`}
+      />
       <GitHubUser />
     </main>
   );

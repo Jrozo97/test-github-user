@@ -2,12 +2,15 @@
 
 const LoadingSpinner = () => {
   return (
-    <div className="flex items-center justify-center w-96 h-96">
+    <div className="flex flex-col items-center justify-center w-96 h-96 gap-4">
       <img
         src="/images/imageLoading.png"
         alt="loading spinner"
-        className="w-20 h-20 animate-spin"
+        className="w-40 h-40 animate-spin"
       />
+      <p className="text-center font-medium text-xl mt-2 dark:text-white">
+        Cargando...
+      </p>
     </div>
   );
 };

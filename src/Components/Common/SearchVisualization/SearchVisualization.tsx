@@ -8,7 +8,7 @@ const SearchVisualization = () => {
         alt="search illustration"
         className="w-96 h-96 self-center"
       />
-      <p className="text-center font-medium text-xl mb-2">
+      <p className="text-center font-medium text-xl mb-2 dark:text-white">
         Aun no has realizado ninguna búsqueda.
         <br /> Por favor ingresa un usuario de GitHub
       </p>

@@ -5,7 +5,6 @@ import LoadingSpinner from "../Common/LoadingSpinner";
 import ErrorDisplay from "../Common/ErrorDisplay";
 import SearchVisualization from "../Common/SearchVisualization";
 import RepositoryList from "../RepositoryList";
-// import RepositoryList from "../RepositoryList";
 
 const GitHubUser = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -29,31 +28,28 @@ const GitHubUser = () => {
     }
   };
 
-  console.log("data", data)
- 
-
   return (
     <>
       <header className="flex flex-col w-full">
-        <h1 className="text-4xl font-medium text-center mb-4">
+        <h1 className="text-4xl font-medium text-center mb-4 dark:text-white">
           GitHub Explorer
         </h1>
-        <h3 className="text-2xl font-normal text-center">
+        <h3 className="text-2xl font-normal text-center dark:text-white">
           Encuentra los usuarios que necesitas.
         </h3>
         <div className="flex gap-5 self-center mt-11">
           <input
             type="text"
             placeholder="Buscar usuario..."
-            className="w-[400px] p-4 border border-gray rounded-md "
+            className="w-[400px] p-4 border border-gray rounded-md dark:text-gray-light dark:bg-primary"
             name="inputValue"
             value={inputValue}
             onChange={handleInputChange}
           />
           <button
             type="submit"
-            className="bg-blue/80 w-44 h-14 rounded-md text-white font-medium disabled:bg-gray"
-            disabled={!inputValue}
+            className="bg-blue/80 w-44 h-14 rounded-md text-white font-medium disabled:bg-gray "
+            disabled={!inputValue || isLoading}
             onClick={handleSubmit}
           >
             Buscar usuario

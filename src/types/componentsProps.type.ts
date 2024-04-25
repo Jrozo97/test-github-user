@@ -19,3 +19,9 @@ export type RepositoryListProps = {
   dataList: Repository[];
 
 }
+
+export type CustomSwitchProps ={
+  label?: string;
+  checked: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}

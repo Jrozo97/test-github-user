@@ -8,10 +8,10 @@ const ErrorDisplay = () => {
         alt="error search"
         className="w-96 h-auto mb-10"
       />
-      <p className="text-center font-medium text-2xl mb-2">
+      <p className="text-center font-medium text-2xl mb-2 dark:text-white">
         ¡Ups!... no se han encontrado resultados!
       </p>
-      <p className="text-center font-medium text-base">
+      <p className="text-center font-medium text-base dark:text-white">
         Por favor, intente otra búsqueda
       </p>
     </div>

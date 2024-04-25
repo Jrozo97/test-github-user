@@ -4,13 +4,13 @@ import { languageColors } from "../../utils/constant";
 
 const RepositoryList = ({ dataList }: RepositoryListProps) => {
   return (
-    <div className="w-[592px] h-max bg-gray-light px-9 py-8 shadow-custom-border rounded-md flex flex-col gap-4">
+    <div className="w-[592px] h-max bg-gray-light px-9 py-8 shadow-custom-border rounded-md flex flex-col gap-4 dark:bg-secondary dark:shadow-custom-border-white">
       {dataList.map((repository: Repository) => {
         const color = languageColors[repository.language];
         console.log("color", color);
         return (
           <div
-            className="w-full h-20 px-8 py-3 flex justify-between shadow-custom-border rounded-md"
+            className="w-full h-20 px-8 py-3 flex justify-between shadow-custom-border rounded-md dark:bg-secondary dark:shadow-custom-border-white   "
             key={repository.name}
           >
             <div className="flex flex-col gap-2 w-3/4">
@@ -20,15 +20,13 @@ const RepositoryList = ({ dataList }: RepositoryListProps) => {
               </p>
             </div>
             <div className="flex flex-col gap-3 w-3/12">
-              <div className="px-[6px] py-1 w-14 flex items-center justify-center self-end rounded-3xl border border-[#D0D7DE]">
-                <p className="font-medium text-xs text-gray">
-                  {repository.visibility.charAt(0).toUpperCase() +
-                    repository.visibility.slice(1)}
-                </p>
-              </div>
+              <span className="inline-flex items-center rounded-3xl w-14 self-end  justify-center px-2 py-1 text-xs font-medium text-gray ring-1 ring-inset ring-[#D0D7DE] dark:ring-[rgba(48,54,61,0.7)] ">
+                {repository.visibility.charAt(0).toUpperCase() +
+                  repository.visibility.slice(1)}
+              </span>
               <div className="flex gap-1 items-center self-end ">
                 <span
-                  className={`rounded-full w-3 h-3 border border-[rgba(208,215,222,0.7)] ${
+                  className={`rounded-full w-3 h-3 border border-[rgba(208,215,222,0.7)] dark:border-[rgba(48,54,61,0.7)] ${
                     languageColors[repository.language]
                   }`}
                 />
