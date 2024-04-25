@@ -6,7 +6,7 @@ const ErrorDisplay = () => {
       <img
         src="/images/imageErrorSearch.png"
         alt="error search"
-        className="w-80 h-80 mb-10"
+        className="w-96 h-auto mb-10"
       />
       <p className="text-center font-medium text-2xl mb-2">
         ¡Ups!... no se han encontrado resultados!

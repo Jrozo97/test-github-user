@@ -1,3 +1,5 @@
+import { Repository } from "../interface/models.interface";
+
 export type UserProfileCardProps = {
   name: string;
   username: string;
@@ -7,3 +9,13 @@ export type UserProfileCardProps = {
   following: number;
   publicRepos: number;
 };
+
+
+export type LanguageColors = {
+  [key: string]: string;
+}
+
+export type RepositoryListProps = {
+  dataList: Repository[];
+
+}

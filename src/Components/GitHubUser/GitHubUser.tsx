@@ -4,6 +4,8 @@ import UserProfileCard from "../UserProfileCard";
 import LoadingSpinner from "../Common/LoadingSpinner";
 import ErrorDisplay from "../Common/ErrorDisplay";
 import SearchVisualization from "../Common/SearchVisualization";
+import RepositoryList from "../RepositoryList";
+// import RepositoryList from "../RepositoryList";
 
 const GitHubUser = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -26,6 +28,9 @@ const GitHubUser = () => {
       setUserName("");
     }
   };
+
+  console.log("data", data)
+ 
 
   return (
     <>
@@ -54,7 +59,7 @@ const GitHubUser = () => {
             Buscar usuario
           </button>
         </div>
-        <section className="flex gap-10 items-center justify-center h-auto max-w-2/3 mt-14">
+        <section className="flex gap-10 items-center justify-center h-auto w-auto mt-14">
           {isLoading && <LoadingSpinner />}
           {error && <ErrorDisplay />}
           {(!data && !isLoading && !error)  && <SearchVisualization />}
@@ -69,6 +74,7 @@ const GitHubUser = () => {
                 following={data?.following}
                 publicRepos={data?.publicRepos}
               />
+              <RepositoryList dataList={data.recentRepos} />
             </>
           )}
         </section>
