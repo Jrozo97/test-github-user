@@ -10,6 +10,7 @@ export const getGithubUser = async (
     `${GITHUB_API_BASE_URL}/users/${username}/repos?sort=updated&per_page=5`
   );
   return {
+    name: response.data.name,
     username: response.data.login,
     avatarUrl: response.data.avatar_url,
     bio: response.data.bio,

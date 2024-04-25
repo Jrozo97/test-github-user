@@ -6,6 +6,7 @@ export interface Repository {
 }
 
 export interface GithubProfile {
+  name: string;
   username: string;
   avatarUrl: string;
   bio: string | null;
