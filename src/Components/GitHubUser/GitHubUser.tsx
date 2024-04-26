@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useGithubUser } from "../../hooks/useGithubUser";
 import UserProfileCard from "../UserProfileCard";
 import LoadingSpinner from "../Common/LoadingSpinner";
@@ -11,10 +11,12 @@ const GitHubUser = () => {
   const [inputValue, setInputValue] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
   const [isSearching, setIsSearching] = useState<boolean>(false);
-  const { isLoading, error, data }: ResponseUseGithubUser = useGithubUser(
-    userName,
-    isSearching
-  );
+  const queryResult = useGithubUser(userName, isSearching);
+  const { isLoading, error, data }: ResponseUseGithubUser = queryResult ?? {
+    isLoading: false,
+    error: null,
+    data: null,
+  };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,6 +31,8 @@ const GitHubUser = () => {
     setInputValue(value);
     if (value.trim() === "") {
       setUserName("");
+      setIsSearching(false);
+      setInputValue("");
     }
   };
 

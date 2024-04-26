@@ -2,7 +2,7 @@
 
 const LoadingSpinner = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-96 h-96 gap-4">
+    <div className="flex flex-col items-center justify-center w-96 h-96 gap-4" role="status">
       <img
         src="/images/imageLoading.png"
         alt="loading spinner"

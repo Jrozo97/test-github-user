@@ -2,7 +2,7 @@
 
 const ErrorDisplay = () => {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center" role="alert">
       <img
         src="/images/imageErrorSearch.png"
         alt="error search"
