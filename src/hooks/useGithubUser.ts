@@ -10,6 +10,7 @@ export const useGithubUser = (username: string, enabled: boolean) => {
     queryFn: () => getGithubUser(username),
     enabled: enabled && !!username,
     refetchOnWindowFocus: false,
+    retry: false
   })
 
 }
