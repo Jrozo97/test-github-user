@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import GitHubUser from "./Components/GitHubUser";
+import { DarkModeContext } from "./context/darkModeContext";
+import CustomSwitch from "./Components/Common/CustomSwitch";
 
 function App() {
+  const { theme, handleChangeTheme } = useContext(DarkModeContext);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="w-screen min-h-screen flex flex-col items-center pt-14 transition-colors duration-300 dark:bg-primary">
+      <CustomSwitch
+        checked={theme === "dark"}
+        onChange={handleChangeTheme}
+      />
+      <GitHubUser />
+    </main>
   );
 }
 
