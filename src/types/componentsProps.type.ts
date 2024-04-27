@@ -1,5 +1,3 @@
-import { Repository } from "../interface/models.interface";
-
 export type UserProfileCardProps = {
   name: string;
   username: string;
