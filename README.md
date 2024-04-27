@@ -40,7 +40,7 @@ To run the unit tests, use the following command:
 
 ## User interface design
 
-The user interface design was created using Figma. You can see the design [here](https://pages.github.com/)
+The user interface design was created using Figma. You can see the design [here](https://www.figma.com/file/Bj6X48Cfamorty2knVQ1Sf/test-datamart?type=design&node-id=0%3A1&mode=design&t=JXP7XeHqHGdRvLIq-1)
 
 ## Contribution
 
