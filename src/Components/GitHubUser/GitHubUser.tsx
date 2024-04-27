@@ -11,11 +11,22 @@ const GitHubUser = () => {
   const [inputValue, setInputValue] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
   const [isSearching, setIsSearching] = useState<boolean>(false);
-  const queryResult = useGithubUser(userName, isSearching);
-  const { isLoading, error, data }: ResponseUseGithubUser = queryResult ?? {
-    isLoading: false,
-    error: null,
-    data: null,
+  const [page, setPage] = useState<number>(1);
+  const [shouldFetchRepos, setShouldFetchRepos] = useState<boolean>(false);
+
+  const queryResultProfile = useGithubUser(userName, isSearching);
+
+  const { isLoading, error, data }: ResponseUseGithubUser =
+    queryResultProfile ?? {
+      isLoading: false,
+      error: null,
+      data: null,
+    };
+
+  const handleNextPage = (event: ChangeEvent<unknown>, page: number) => {
+    event.preventDefault();
+    setPage(page);
+    setShouldFetchRepos(true);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -23,6 +34,7 @@ const GitHubUser = () => {
     if (inputValue.trim() !== "") {
       setUserName(inputValue);
       setIsSearching(true);
+      setShouldFetchRepos(true); 
     }
   };
 
@@ -32,6 +44,7 @@ const GitHubUser = () => {
     if (value.trim() === "") {
       setUserName("");
       setIsSearching(false);
+      setShouldFetchRepos(false);
       setInputValue("");
     }
   };
@@ -81,7 +94,12 @@ const GitHubUser = () => {
               following={data?.following}
               publicRepos={data?.publicRepos}
             />
-            <RepositoryList dataList={data.recentRepos} />
+            <RepositoryList
+              userName={userName}
+              handleNextPage={handleNextPage}
+              page={page}
+              shouldFetchRepos={shouldFetchRepos}
+            />
           </>
         )}
       </section>

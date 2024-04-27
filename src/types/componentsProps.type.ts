@@ -16,7 +16,10 @@ export type LanguageColors = {
 }
 
 export type RepositoryListProps = {
-  dataList: Repository[];
+  userName: string;
+  handleNextPage: ( event: React.ChangeEvent<unknown>, page: number ) => void;
+  page: number;
+  shouldFetchRepos: boolean;
 
 }
 
@@ -24,4 +27,10 @@ export type CustomSwitchProps ={
   label?: string;
   checked: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+
+export type DarkModeContextProps = {
+  theme: 'dark' | 'light';
+  handleChangeTheme: () => void;
 }

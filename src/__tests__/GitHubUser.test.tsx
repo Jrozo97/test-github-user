@@ -2,11 +2,14 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useGithubUser } from "../hooks/useGithubUser";
 import GitHubUser from "../Components/GitHubUser";
+import { useGithubRepo } from "../hooks/useGithubRepo";
 
 jest.mock("../hooks/useGithubUser");
 
+jest.mock("../hooks/useGithubRepo")
+
 describe("GitHubUser", () => {
-  const mockData = {
+  const mochDataProfile = {
     name: "John Doe",
     username: "johndoe",
     avatarUrl: "https://example.com/avatar.jpg",
@@ -30,16 +33,39 @@ describe("GitHubUser", () => {
     ],
   };
 
+  const mochDataRepo = [
+    {
+      name: "repo1",
+      description: "Description 1",
+      visibility: "public",
+      language: "JavaScript",
+    },
+    {
+      name: "repo2",
+      description: "Description 2",
+      visibility: "private",
+      language: "TypeScript",
+    },
+  ];
+
   beforeEach(() => {
     (useGithubUser as jest.Mock).mockReturnValue({
       isLoading: false,
       error: null,
-      data: mockData,
+      data: mochDataProfile,
+    });
+  });
+
+  beforeEach(() => {
+    (useGithubRepo as jest.Mock).mockReturnValue({
+      isLoading: false,
+      error: null,
+      data: mochDataRepo,
     });
   });
 
   test("renders the component correctly", () => {
-    render(<GitHubUser />);
+    render(<GitHubUser/>);
     expect(screen.getByText("GitHub Explorer")).toBeInTheDocument();
     expect(
       screen.getByPlaceholderText("Buscar usuario...")

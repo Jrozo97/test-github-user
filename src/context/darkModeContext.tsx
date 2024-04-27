@@ -1,9 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-
-interface DarkModeContextProps {
-  theme: 'dark' | 'light';
-  handleChangeTheme: () => void;
-}
+import { DarkModeContextProps } from '../types/componentsProps.type';
 
 export const DarkModeContext = createContext<DarkModeContextProps>({
   theme: 'light',

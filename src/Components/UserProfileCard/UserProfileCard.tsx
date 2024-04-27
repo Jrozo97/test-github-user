@@ -10,11 +10,11 @@ const UserProfileCard = ({
   publicRepos,
 }: UserProfileCardProps) => {
   return (
-    <section className="flex flex-col items-center gap-11 px-10 py-6 max-w-80 max-sm:max-w-full h-auto bg-gray-light shadow-custom-border rounded-md dark:bg-secondary dark:shadow-custom-border-white">
+    <section className="flex flex-col items-center gap-11 px-10 py-6 w-80 max-sm:w-full h-[528px] bg-gray-light shadow-custom-border rounded-md dark:bg-secondary dark:shadow-custom-border-white">
       <img
         src={avatarUrl}
         alt={`${username} avatar`}
-        className="w-60 h-60 max-sm:h-max rounded-full"
+        className="w-60 h-60 max-lg:h-max rounded-full"
       />
       <div className="flex flex-col w-full">
         <h2 className="text-sm font-semibold dark:text-white">{name}</h2>

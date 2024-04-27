@@ -13,11 +13,16 @@ export interface GithubProfile {
   followers: number;
   following: number;
   publicRepos: number;
-  recentRepos: Repository[];
 }
 
 export interface ResponseUseGithubUser {
   isLoading: boolean | undefined;
   error: Error | null;
   data: GithubProfile | undefined;
+}
+
+export interface ResponseUseGithubRepo {
+  isLoading: boolean | undefined;
+  error?: Error | null;
+  data: Repository[] | undefined;
 }
