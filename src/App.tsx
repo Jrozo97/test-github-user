@@ -8,7 +8,7 @@ function App() {
 
 
   return (
-    <main className="w-screen min-h-screen flex flex-col items-center pt-14 transition-colors duration-300 dark:bg-primary">
+    <main className="w-screen min-h-screen  flex flex-col items-center pt-14 transition-colors duration-300 dark:bg-primary">
       <CustomSwitch
         checked={theme === "dark"}
         onChange={handleChangeTheme}

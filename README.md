@@ -1,53 +1,53 @@
-# GitHub User Finder
+# GitHub User Test
 
-Este proyecto es una aplicación web que permite buscar usuarios de GitHub y ver información detallada sobre ellos, incluyendo una lista de sus repositorios. La aplicación utiliza la API de GitHub para obtener los datos.
+This project is a web application that allows you to search for GitHub users and view detailed information about them, including a list of their repositories. The application uses the GitHub API to get the data.
 
-## Características
+## Characteristics
 
-- Buscar usuarios de GitHub por nombre de usuario
-- Ver detalles del usuario, como nombre, biografía, cantidad de seguidores y seguidos
-- Listar los repositorios del usuario
-- Navegar a cada repositorio para ver más detalles
+- Search GitHub users by user name
+- View user details, such as name, bio, number of followers and followings
+- List the user's repositories
+- Navigate to each repository to see more details
 
-## Tecnologías utilizadas
+## Technologies used
 
 - React.js
 - TypeScript
-- Tanstack Query (para el manejo de datos y caché)
-- Jest (para pruebas unitarias)
-- Figma (para el diseño de la interfaz de usuario)
+- Tanstack Query (for data handling and caching)
+- Jest (for unit tests)
+- Figma (for the design of the user interface)
 
-## Instalación
+## Installation
 
-1. Clona este repositorio en tu máquina local:
+1. Clone this repository on your local machine:
 > git clone https://github.com/Jrozo97/test-github-user.git
 
-2. Navega al directorio del proyecto:
+2. Navigate to the project directory:
 > cd github-user-finder
 
-3. Instala las dependencias:
+3. Install the dependencies:
 > npm install
 
-4. Inicia la aplicación en modo de desarrollo:
+4. Start the application in development mode:
 > npm run start
 
-Esto abrirá la aplicación en `http://localhost:3000` en tu navegador.
+This will open the application in `http://localhost:3000` in your browser.
 
-## Pruebas
+## Tests
 
-Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
+To run the unit tests, use the following command:
 > npm test
 
-## Diseño de la interfaz de usuario
+## User interface design
 
-El diseño de la interfaz de usuario se creó utilizando Figma. Puedes ver el diseño [aqui](https://pages.github.com/)
+The user interface design was created using Figma. You can see the design [here](https://pages.github.com/)
 
-## Contribución
+## Contribution
 
-Si deseas contribuir a este proyecto, sigue estos pasos:
+If you wish to contribute to this project, follow these steps:
 
-1. Haz un fork de este repositorio
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`)
-3. Realiza tus cambios y haz commit (`git commit -am 'Agrega nueva funcionalidad'`)
-4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
+1. Make a fork of this repository
+2. Create a new branch (`git checkout -b feature/new-functionality`)
+3. Make your changes and commit (`git commit -am 'Feat: Add new functionality'`) 
+4. Push to the branch (`git push origin feature/new-functionality`)
+5. Open a Pull Request
