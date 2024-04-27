@@ -33,20 +33,25 @@ describe("GitHubUser", () => {
     ],
   };
 
-  const mochDataRepo = [
-    {
-      name: "repo1",
-      description: "Description 1",
-      visibility: "public",
-      language: "JavaScript",
-    },
-    {
-      name: "repo2",
-      description: "Description 2",
-      visibility: "private",
-      language: "TypeScript",
-    },
-  ];
+  const mochDataRepo = {
+    totalPage: 1,
+    repositories: [
+      {
+        name: "repo1",
+        description: "Description 1",
+        visibility: "public",
+        language: "JavaScript",
+        html_url: "https://example.com/repo1",
+      },
+      {
+        name: "repo2",
+        description: "Description 2",
+        visibility: "private",
+        language: "TypeScript",
+        html_url: "https://example.com/repo2",
+      },
+    ],
+  };
 
   beforeEach(() => {
     (useGithubUser as jest.Mock).mockReturnValue({

@@ -39,30 +39,35 @@ describe('RepositoryList', () => {
   });
 
   it('should render repositories', () => {
-    const repositories = [
-      {
-        name: 'repo-1',
-        description: 'This is repo 1',
-        visibility: 'public',
-        language: 'JavaScript',
-      },
-      {
-        name: 'repo-2',
-        description: 'This is repo 2',
-        visibility: 'private',
-        language: 'TypeScript',
-      },
-    ];
+    const dataRepo = {
+      totalPage: 1,
+      repositories: [
+        {
+          name: "repo1",
+          description: "Description 1",
+          visibility: "public",
+          language: "JavaScript",
+          html_url: "https://example.com/repo1",
+        },
+        {
+          name: "repo2",
+          description: "Description 2",
+          visibility: "private",
+          language: "TypeScript",
+          html_url: "https://example.com/repo2",
+        },
+      ],
+    }
     const useGithubRepoMock = {
       isLoading: false,
-      data: repositories,
+      data: dataRepo,
     };
     const { useGithubRepo } = require('../hooks/useGithubRepo');
     useGithubRepo.mockReturnValue(useGithubRepoMock);
 
     renderRepositoryList({ userName: 'test-user', page: 1, shouldFetchRepos: true });
 
-    repositories.forEach((repo) => {
+    dataRepo.repositories.forEach((repo) => {
       expect(screen.getByText(repo.name)).toBeInTheDocument();
       expect(screen.getByText(repo.description)).toBeInTheDocument();
       expect(screen.getByText(repo.visibility.charAt(0).toUpperCase() + repo.visibility.slice(1))).toBeInTheDocument();

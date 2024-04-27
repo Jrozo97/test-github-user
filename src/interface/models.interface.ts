@@ -3,6 +3,12 @@ export interface Repository {
   description?: string | null;
   visibility: string;
   language: string;
+  html_url: string;
+}
+
+export interface GithubReposisotoryResponse {
+  totalPage: number;
+  repositories: Repository[];
 }
 
 export interface GithubProfile {
@@ -24,5 +30,5 @@ export interface ResponseUseGithubUser {
 export interface ResponseUseGithubRepo {
   isLoading: boolean | undefined;
   error?: Error | null;
-  data: Repository[] | undefined;
+  data: GithubReposisotoryResponse | undefined;
 }
