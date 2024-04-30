@@ -35,7 +35,7 @@ const RepositoryList = ({
 
       {(data?.repositories?.length ?? 0) > 0 ? (
         <div className="flex flex-col justify-center items-center h-full">
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 w-full">
             {data?.repositories.map((repository: Repository) => {
               return (
                 <li
